@@ -1,0 +1,6 @@
+@HNG_Backend_Stage_Two_User_Auth_HostAddress = http://localhost:5133
+
+GET {{HNG_Backend_Stage_Two_User_Auth_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
