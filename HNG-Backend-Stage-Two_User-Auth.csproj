@@ -8,6 +8,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="autowrapper.core" Version="4.5.1" />
+    <PackageReference Include="Microsoft.entityframeworkcore.design" Version="8.0.6">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.entityframeworkcore.inmemory" Version="8.0.6" />
+    <PackageReference Include="microsoft.visualstudio.web.codegeneration.design" Version="8.0.2" />
+    <PackageReference Include="npgsql.entityframeworkcore.postgresql" Version="8.0.4" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
   </ItemGroup>
 
