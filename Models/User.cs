@@ -1,9 +1,11 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace HNG_Backend_Stage_Two_User_Auth.Models;
 
 public class User
 {
+    [JsonIgnore]
     [Required]
     [MaxLength(255)]
     public string? UserId { get; set; }

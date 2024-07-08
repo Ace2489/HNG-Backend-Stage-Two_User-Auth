@@ -1,10 +1,19 @@
 using HNG_Backend_Stage_Two_User_Auth.Extensions;
+using HNG_Backend_Stage_Two_User_Auth.Filters;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddControllers();
+builder.Services.AddControllers(options =>
+{
+    options.Filters.Add<CustomValidationFilter>();
+    options.Filters.Add<CustomExceptionFilter>();
+}).ConfigureApiBehaviorOptions(
+    options =>
+{
+    options.SuppressModelStateInvalidFilter = true;
+});
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
