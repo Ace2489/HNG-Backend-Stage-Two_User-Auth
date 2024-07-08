@@ -25,4 +25,6 @@ public class User
     
     [Required]
     public required string Phone { get; set; }
+    
+    public List<UserOrganisation> UserOrganisations { get; set; } = null!;
 }
