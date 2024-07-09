@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace HNG_Backend_Stage_Two_User_Auth.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240708205046_CreatedUserOrganisations")]
+    [Migration("20240709023845_CreatedUserOrganisations")]
     partial class CreatedUserOrganisations
     {
         /// <inheritdoc />
@@ -106,13 +106,13 @@ namespace HNG_Backend_Stage_Two_User_Auth.Migrations
                     b.HasOne("HNG_Backend_Stage_Two_User_Auth.Organisation", "Organisation")
                         .WithMany("UserOrganisations")
                         .HasForeignKey("OrgId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("HNG_Backend_Stage_Two_User_Auth.Models.User", "User")
                         .WithMany("UserOrganisations")
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Organisation");

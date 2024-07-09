@@ -7,10 +7,10 @@ public class UserOrganisation
 {
 
     [Required]    
-    public required string UserId { get; set; }
+    public string UserId { get; set; } = null!;
 
     [Required]
-    public required string OrgId { get; set; }
+    public string OrgId { get; set; } = null!;
 
     [Required]
     public User User { get; set; } = null!;

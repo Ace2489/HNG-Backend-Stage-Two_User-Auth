@@ -8,6 +8,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="autowrapper.core" Version="4.5.1" />
+    <PackageReference Include="microsoft.aspnetcore.authentication.jwtbearer" Version="8.0.6" />
     <PackageReference Include="Microsoft.entityframeworkcore.design" Version="8.0.6">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>

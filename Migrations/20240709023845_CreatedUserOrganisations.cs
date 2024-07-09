@@ -40,13 +40,13 @@ namespace HNG_Backend_Stage_Two_User_Auth.Migrations
                         column: x => x.OrgId,
                         principalTable: "Organisations",
                         principalColumn: "OrgId",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_UserOrganisations_Users_UserId",
                         column: x => x.UserId,
                         principalTable: "Users",
                         principalColumn: "UserId",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(

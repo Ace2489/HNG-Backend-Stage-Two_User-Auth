@@ -3,6 +3,7 @@ using HNG_Backend_Stage_Two_User_Auth.Filters;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.AddJwtAuthentication();
 // Add services to the container.
 
 builder.Services.AddControllers(options =>

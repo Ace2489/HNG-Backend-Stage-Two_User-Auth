@@ -37,12 +37,12 @@ public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> context
             entity.HasOne(uc => uc.User)
                 .WithMany(u => u.UserOrganisations)
                 .HasForeignKey(uc => uc.UserId)
-                .OnDelete(DeleteBehavior.Restrict);
+                .OnDelete(DeleteBehavior.Cascade);
 
             entity.HasOne(uc => uc.Organisation)
                 .WithMany(c => c.UserOrganisations)
                 .HasForeignKey(uc => uc.OrgId)
-                .OnDelete(DeleteBehavior.Restrict);
+                .OnDelete(DeleteBehavior.Cascade);
 
             entity.Property(e => e.CreationDate)
                 .HasDefaultValueSql("CURRENT_TIMESTAMP");

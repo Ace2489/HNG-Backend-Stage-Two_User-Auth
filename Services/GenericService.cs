@@ -6,13 +6,21 @@ namespace HNG_Backend_Stage_Two_User_Auth;
 
 public interface IService<T>
 {
-    public Task<T?> FindAsync(string Id);
+    public Task<T> AddAsync(T entity, CancellationToken cancellationToken = default);
+    public Task<T?> FindAsync(string Id, CancellationToken cancellationToken = default);
 }
 
 public abstract class GenericService<T>(IRepository<T> repository) : IService<T> where T : class
 {
-    public Task<T?> FindAsync(string Id)
+    private readonly IRepository<T> repository = repository;
+
+    public Task<T> AddAsync(T entity, CancellationToken cancellationToken = default)
     {
-        throw new NotImplementedException();
+        return repository.AddAsync(entity, cancellationToken);
+    }
+
+    public Task<T?> FindAsync(string Id, CancellationToken cancellationToken = default)
+    {
+        return repository.FindAsync(Id, cancellationToken);
     }
 }

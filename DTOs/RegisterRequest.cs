@@ -1,20 +1,24 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace HNG_Backend_Stage_Two_User_Auth;
+namespace HNG_Backend_Stage_Two_User_Auth.DTO;
 
-public class RegisterRequest
+public record RegisterRequest
 {
 
     [Required]
-    public string? FirstName { get; set; }
+    public string? firstName { get; set; }
 
     [Required]
-    public string? LastName { get; set; }
+    public string? lastName { get; set; }
+
+    [EmailAddress]
+    [Required]
+    public string? email { get; set; }
 
     [Required]
-    public string? Email { get; set; }
+    public string? password { get; set; }
 
     [Required]
-    public string? Phone { get; set; }
+    public string? phone { get; set; }
 }
 
