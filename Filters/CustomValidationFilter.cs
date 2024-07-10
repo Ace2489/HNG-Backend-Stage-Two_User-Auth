@@ -6,13 +6,14 @@ public sealed class CustomValidationFilter : IActionFilter
 {
     public void OnActionExecuted(ActionExecutedContext context)
     {
+    }
+
+    public void OnActionExecuting(ActionExecutingContext context)
+    {
         if (!context.ModelState.IsValid)
         {
             throw new InvalidJSONException(context.ModelState);
         }
     }
 
-    public void OnActionExecuting(ActionExecutingContext context)
-    {
-    }
 }
